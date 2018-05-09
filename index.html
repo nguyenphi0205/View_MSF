@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="msf" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini Sharing File</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/upload.css">
+    <!-- JS module-->
+    <script src="/app/app.js"></script>
+    <script src="/app/pages/pages.module.js"></script>
+    <script src="/app/pages/controller/Upload/upload.module.js"></script>
+
+    <!-- JS -->
+
+    <!-- Config -->
+    <script src="/app/pages/configuration/pages.routes.js"></script>
+    <script src="/app/pages/configuration/pages.constants.js"></script>
+
+    <!-- Controller -->
+    <script src="/app/pages/controller/Upload/upload.controller.js"></script>
+
+    <!-- Service -->
+    <script src="/app/pages/service/Upload/upload.service.js"></script>
+   
+    <!-- Template -->
+    <script src="/app/pages/template/Upload/upload.view.html"></script>
+    <!-- Directive -->
+   
+</head>
+
+<body >
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>DXC Share File</h3>
+                <strong>DXC</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#/!">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-upload"></i>
+                        Upload
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#!file_management">
+                        <i class="glyphicon glyphicon-file"></i>
+                        File Management
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Sidebar Holder -->
+        
+        <!-- Page Content Holder -->
+        <div id="content" class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!--Header-->
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span>DXC Share</span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <!--START LOGIN-->
+                            <li>
+                                <div class="navbar-header">
+                                    <button class="btn btn-info navbar-btn" type="button" onclick="document.getElementById('login_form').style.display='block'">Login</button>
+                                </div>
+                                <div id="login_form" class="modal">
+                                    <form class="modal-content animate">
+
+                                        <div class="container_form">
+
+                                            <div class="imgcontainer">
+                                                <span onclick="document.getElementById('login_form').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                            </div>
+
+                                            <div>
+                                                <img src="/assets/login.jpg" alt="login" />
+                                            </div>
+                                            <div class="til">
+                                                <b>Email</b>
+                                            </div>
+                                            <div class="input-group">
+                                                <input id="log_username" type="text" class="form-control" name="log_username" placeholder="email">
+                                            </div>
+                                            <div class="til">
+                                                <b>Password</b>
+                                            </div>
+                                            <div class="input-group">
+                                                <input id="log_password" type="password" class="form-control" name="log_password" placeholder="password">
+                                            </div>
+
+                                            <br>
+
+                                            <label>
+                                                <input type="checkbox" name="remember"> Remember me
+                                            </label>
+
+                                            <br>
+
+                                            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+                                            <br>
+
+                                            <div class="psw">
+                                                <a href="#">Forgot password?</a>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <!--END LOGIN-->
+
+                            <!--START REGISTER-->
+                            <li>
+                                <div class="navbar-header">
+                                    <button type="button" class="btn btn-info navbar-btn" onclick="document.getElementById('register_form').style.display='block'">Register</button>
+                                </div>
+
+                                <div id="register_form" class="modal">
+
+                                    <form class="modal-content animate">
+
+                                        <div class="container_form">
+
+                                            <div class="imgcontainer">
+                                                <span onclick="document.getElementById('register_form').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                            </div>
+
+                                            <div>
+                                                <img src="/assets/register.jpg" alt="login" />
+                                            </div>
+                                            <div class="til">
+                                                <b>Username</b>
+                                            </div>
+                                            <div class="input-group">
+                                                <input id="reg_username" type="text" class="form-control" name="reg_username" value="" placeholder="username">
+                                            </div>
+                                            <div class="til">
+                                                <b>Email</b>
+                                            </div>
+                                            <div class="input-group">
+                                                <input id="reg_email" type="email" class="form-control" name="email" value="" placeholder="email">
+                                            </div>
+                                            <div class="til">
+                                                <b>Password</b>
+                                            </div>
+                                            <div class="input-group">
+                                                <input id="reg_password" type="password" class="form-control" name="reg_password" placeholder="password">
+                                            </div>
+                                            <div class="til">
+                                                <b>Repeat Password</b>
+                                            </div>
+                                            <div class="input-group">
+                                                <input id="repeat_password" type="password" class="form-control" name="repeat_password" placeholder="repeat password">
+                                            </div>
+
+                                            <br>
+
+                                            <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <!--END REGISTER-->
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--SEARCH-->
+            <div class="topnav">
+                <div class="form-group">
+                    <span>Category</span>
+                    <select class="form-control" ng-model="select_search" ng-options="y.category for (x,y) in table">
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <span>File Name</span>
+                    <input class="form-control" type="text" placeholder="File name..">
+                </div>
+
+                <div class="form-group">
+                    <span>Uploader
+                        <span>
+                            <input class="form-control" type="text" placeholder="Uploader..">
+                </div>
+                <div class="search-container">
+                    <button type="submit">Search</button>
+                </div>
+            </div>
+
+            <!--TEMPLATE-->
+            <!-- <div ng-view></div> -->
+            <div ng-controller="uploadService">
+                <form method="POST" action="uploadFiles" enctype="multipart/form-data">
+                    <input type="file" name="file" id="file" accept=".jpg" ng-model="Data.eventImage">
+                    <br>
+                    <input type="button" class="btn btn-danger" value="Upload" ng-click="uploadFiles()"> Press here to upload!
+                </form>
+                
+                    <!-- <input type="file" file-model="file" accept=".jpg"/>
+                    <button ng-click="uploadFiles()">upload me</button> -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
