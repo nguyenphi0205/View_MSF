@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+   <script src="upload.js"></script>
+</head>
+
+<body>
+    <div ng-controller="uploadcontroller">
+        <form method="POST" action="uploadFile" enctype="multipart/form-data">
+            <input type="file"  name="file" id="file" accept=".jpg" >
+            <br>
+            <input type="button" class="btn btn-danger" value="Upload" ng-click="uploadFile()"> Press here to upload!
+        </form>
+    </div>
+    <div>
+        
+    </div>
+</body>
+
+</html>
